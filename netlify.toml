@@ -5,4 +5,5 @@
 [functions]
   external_node_modules = ["express"]  # Include Express in the bundle
   node_bundler = "esbuild"  # Use esbuild for bundling functions
-
+  memory = 512
+  timeout = 10 # increase timeout to 10 seconds
