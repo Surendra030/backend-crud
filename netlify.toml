@@ -3,7 +3,9 @@
   publish = "public"  # For static frontend assets (if applicable)
 
 [functions]
-  external_node_modules = ["express"]  # Include Express in the bundle
+  external_node_modules = ["express","dotenv"]  # Include Express in the bundle
   node_bundler = "esbuild"  # Use esbuild for bundling functions
-  memory = 512
+  
+  [functions.memory]
+  value = 512
   timeout = 10 # increase timeout to 10 seconds
