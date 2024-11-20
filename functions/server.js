@@ -9,7 +9,7 @@ app.use(express.json()); // For parsing JSON request bodies
 
 connectDB()
 
-app.use("/api",contactRoutes)
+app.use("/api/",contactRoutes)
 
 
 app.get('/.netlify/functions/server/home', (req, res) => {

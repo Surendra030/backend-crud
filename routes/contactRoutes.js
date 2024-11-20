@@ -3,10 +3,10 @@ const { createContact, getContact, updateContact, deleteContact } = require('../
 
 const router = express.Router();
 
-router.post('/createContact', createContact);
+router.post('createContact', createContact);
 
-router.post('/getContact', getContact);
-router.post('/updateContact', updateContact);
-router.post('/deleteContact', deleteContact);
+router.post('getContact', getContact);
+router.post('updateContact', updateContact);
+router.post('deleteContact', deleteContact);
 
 module.exports = router;
