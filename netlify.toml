@@ -1,0 +1,13 @@
+[build]
+  functions = "functions"  # Correct path to your functions folder
+  publish = "public"  # For static frontend assets (if applicable)
+
+[functions]
+  external_node_modules = ["express"]  # Include Express in the bundle
+  node_bundler = "esbuild"  # Use esbuild for bundling functions
+
+[[redirects]]
+  force = true
+  from = "/api/*"
+  status = 200
+  to = "/.netlify/functions/:splat"  # Maps all /api/* requests to the correct Netlify serverless function endpoint
