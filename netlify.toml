@@ -6,8 +6,3 @@
   external_node_modules = ["express"]  # Include Express in the bundle
   node_bundler = "esbuild"  # Use esbuild for bundling functions
 
-[[redirects]]
-  force = true
-  from = "/api/*"
-  status = 200
-  to = "/.netlify/functions/:splat"  # Maps all /api/* requests to the correct Netlify serverless function endpoint

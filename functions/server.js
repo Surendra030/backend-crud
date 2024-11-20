@@ -2,15 +2,20 @@ const express = require('express');
 const serverless = require('serverless-http');
 const { builder } = require('@netlify/functions'); // To wrap Express for Netlify functions
 const contactRoutes = require("../routes/contactRoutes")
-const connectDB = require("../config/db")
+const connectDB = require("../config/db");
+const { getContact, updateContact, deleteContact, createContact } = require('../controllers/contactController');
 
 const app = express();
 app.use(express.json()); // For parsing JSON request bodies
 
 connectDB()
 
-app.use("/api/",contactRoutes)
+// app.use("/.netlify/functions/server/api/",contactRoutes)
 
+app.post('/.netlify/functions/server/api/createContact', createContact);
+app.post("/.netlify/functions/server/api/getContact",getContact)
+app.post('/.netlify/functions/server/api/updateContact', updateContact);
+app.post('/.netlify/functions/server/api/deleteContact', deleteContact);
 
 app.get('/.netlify/functions/server/home', (req, res) => {
     console.log("GET method on /home");
